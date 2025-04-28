@@ -1,0 +1,13 @@
+apiVersion: dapr.io/v1.0
+kind: Configuration
+metadata:
+  name: workflowapp
+spec:
+  nameResolution:
+    component: 'mdns'
+    version: 'v1'
+    configuration:
+      hostname: 'localhost'
+  tracing:
+    samplingRate: '1'
+  features: []
