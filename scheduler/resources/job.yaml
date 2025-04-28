@@ -1,0 +1,14 @@
+apiVersion: dapr.io/v1alpha1
+kind: Job
+metadata:
+  name: call-api-job
+spec:
+  schedule:
+    type: "cron"
+    cron: "* * * * *"
+  actions:
+    - name: call-api-action
+      type: bindings
+      bindings:
+        componentName: scheduled-job
+        operation: create
